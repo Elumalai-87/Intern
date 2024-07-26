@@ -1,0 +1,140 @@
+<html>  
+    <head>   
+    <title>Logins!  </title>
+    <style>
+       
+        
+    </style>   
+      
+    </head>  
+    <h1>Login page!</h1>
+    <style>
+        
+        h1{
+            
+            
+            text-align: center;
+            padding: 50px 600px;
+            font-size: 40px;
+
+        
+        }
+        table{
+            align-items: center;
+            padding: 20px 750px;
+            font-size: 20px;
+        }
+            
+       
+
+        
+        
+
+        
+    </style>
+    
+    <form [formGroup]="contactForm" (submit)="onSubmit()"  >
+        
+        <table>
+            <tr>
+                <td>Firstname:</td>
+                <td>
+                    <input type="text" name="firstname" size="15"     formControlName="FirstName" placeholder="Enter the firstname">
+            <span *ngIf="!contactForm.controls.FirstName.valid && contactForm.controls.FirstName.dirty">
+                Firstname is invalid
+            </span>
+                </td>
+                <br>
+            </tr>
+            <tr>
+                <td>Middlename:</td>
+                <td>
+                    <input type="text" name="middlename" size="15" formControlName="MidleName" placeholder="Enter the Middlename">
+                </td>
+               
+            </tr>
+            <tr><td>LastName:</td>
+                <td>
+                    <input type="text" name="lastname" size="15" formControlName="LastName" placeholder="Enter the lastname"> 
+            <span *ngIf="!contactForm.controls.LastName.valid && contactForm.controls.LastName.dirty">
+                Lastname is invalid
+            </span>
+            
+                </td>
+            </tr>
+            <tr>
+                <td>Date of birth:</td>
+                <td> <input type="date"></td>
+                <span *ngIf="!contactForm.controls.Date.valid && contactForm.controls.Date.dirty">
+                    Date of birth is invalid
+                </span>
+            </tr>
+            <tr>
+                <td>Department:</td>
+                <td>
+                    <span *ngIf="!contactForm.controls.Department.valid && contactForm.controls.Department.dirty">
+                        Department is invalid
+                    </span>   
+                    <select id="Department" formControlName="Department"> 
+                        
+                    <option value="Course">Department</option>  
+                    <option value="CSE">CSE</option>  
+                    <option value="MECH">MECH</option>  
+                    <option value="CIVIL">CIVIL</option>  
+                    <option value="ECE">ECE</option>  
+                    <option value="EEE">EEE</option>  
+                    <option value="IT">IT</option> 
+                
+                    </select>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" value="Male" name="gender" checked > Male   
+            <input type="radio" value="Female" name="gender"> Female   
+            <input type="radio" value="Other" name="gender"> Other
+                </td>
+            </tr>
+            <tr>
+                <td>Phone No</td>
+                <td>
+                    <input type="text" name="country code"  value="+91" size="2" >   
+            <input type="text" name="phone" size="10"formControlName="Phone" placeholder="Enter the number"> 
+            
+            <span class="text-danger"  *ngIf="!contactForm.controls.Phone.valid && contactForm.controls.Phone.dirty">
+                Phone number is invalid
+            </span> 
+                </td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td>
+                    <textarea cols="80" rows="5" value="address"formControlName="Address"placeholder="Enter the Address">  
+                    </textarea>  
+                    <span *ngIf="!contactForm.controls.Address.valid && contactForm.controls.Address.dirty">
+                        Address is invalid
+                    </span> 
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    
+                <input type="text" name="email" value="" formControlName="Email"placeholder="Enter the Email">
+        
+            
+            <span *ngIf="!contactForm.controls.Email.valid && contactForm.controls.Email.dirty">
+                Email is invalid
+            </span> 
+                </td>
+            </tr>
+            <tr>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+    
+      
+    </html>  
